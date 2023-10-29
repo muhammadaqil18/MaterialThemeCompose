@@ -69,7 +69,6 @@ class MainActivity : ComponentActivity() {
 /**
  * Composable that displays an app bar and a list of dogs.
  */
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WoofApp() {
     Scaffold(
