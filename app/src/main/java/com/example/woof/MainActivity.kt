@@ -27,6 +27,8 @@ import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -39,6 +41,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -49,6 +52,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -60,6 +64,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.woof.data.Dog
 import com.example.woof.data.dogs
@@ -226,6 +231,31 @@ fun DogItemButton(
         )
     }
 }
+
+//@Composable
+//fun IconButton(
+//    onClick: () -> Unit,
+//    modifier: Modifier = Modifier,
+//    enabled: Boolean = true,
+//    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
+//    content: @Composable () -> Unit
+//) {
+//    Box(
+//        modifier = modifier
+//            .minimumTouchTargetSize()
+//            .clickable(
+//                onClick = onClick,
+//                enabled = enabled,
+//                role = Role.Button,
+//                interactionSource = interactionSource,
+//                indication = rememberRipple(bounded = false, radius = RippleRadius)
+//            ),
+//        contentAlignment = Alignment.Center
+//    ) {
+//        val contentAlpha = if (enabled) LocalContentAlpha.current else ContentAlpha.disabled
+//        CompositionLocalProvider(LocalContentAlpha provides contentAlpha, content = content)
+//    }
+//}
 
 @Composable
 fun DogHobby(
